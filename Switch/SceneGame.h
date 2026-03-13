@@ -1,13 +1,21 @@
 #pragma once
 #include "SceneBase.h"
 
-class Player;
+class PlayerJump;
+class PlayerPunch;
+class Switch;
+class Ground;
+class Node;
 
 class SceneGame : public SceneBase
 {
 private:
-	int m_image;
-	Player* m_player;
+	Node* m_rootNode;
+	int m_background;
+	PlayerJump* m_playerJump;
+	PlayerPunch* m_playerPunch;
+	Switch* m_switch;
+	Ground* m_ground;
 
 public:
 	SceneGame();

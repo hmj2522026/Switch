@@ -3,8 +3,8 @@
 
 namespace Screen
 {
-	static constexpr int Width = 640;	// •@Œã‚Å•Ï‚¦‚é‚©‚à
-	static constexpr int Height = 480;	// ‚‚³
+	static constexpr int Width = 800;	// •@Œã‚Å•Ï‚¦‚é‚©‚à
+	static constexpr int Height = 600;	// ‚‚³
 	static constexpr Vector2 Size = Vector2(Width, Height);	// •E‚‚³
 
 	static constexpr int Top = 0;				// ã

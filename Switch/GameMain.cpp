@@ -6,6 +6,7 @@
 #include "SceneGame.h"
 #include "Time.h"
 #include "Keyboard.h"
+#include "Physics2D.h"
 
 GameMain::~GameMain()
 {
@@ -62,12 +63,19 @@ void GameMain::Run()
 		// シーンの更新
 		SceneManager::GetInstance()->Update();
 
+		Physics2D::GetInstance()->Update();
+
 		// 自作スクリーンに描画
 		SetDrawScreen(m_screen);
 		ClearDrawScreen();
 
 		// シーンの描画
 		SceneManager::GetInstance()->Draw();
+
+#ifdef _DEBUG
+		Physics2D::GetInstance()->Draw();
+#endif // _DEBUG
+
 
 		// 自作スクリーンを裏画面に描画
 		SetDrawScreen(DX_SCREEN_BACK);

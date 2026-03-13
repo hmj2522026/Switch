@@ -139,27 +139,52 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Actor2D.cpp" />
+    <ClCompile Include="Block.cpp" />
+    <ClCompile Include="Collision2D.cpp" />
     <ClCompile Include="GameMain.cpp" />
+    <ClCompile Include="Goal.cpp" />
     <ClCompile Include="Ground.cpp" />
     <ClCompile Include="Keyboard.cpp" />
     <ClCompile Include="Main.cpp" />
-    <ClCompile Include="Player.cpp" />
+    <ClCompile Include="Node.cpp" />
+    <ClCompile Include="Physics2D.cpp" />
+    <ClCompile Include="PlayerJump.cpp" />
+    <ClCompile Include="PlayerPunch.cpp" />
+    <ClCompile Include="Punch.cpp" />
     <ClCompile Include="SceneGame.cpp" />
     <ClCompile Include="SceneManager.cpp" />
+    <ClCompile Include="Stage.cpp" />
     <ClCompile Include="Time.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Actor2D.h" />
+    <ClInclude Include="Block.h" />
+    <ClInclude Include="BoxCollider.h" />
+    <ClInclude Include="Collision2D.h" />
     <ClInclude Include="GameConfig.h" />
     <ClInclude Include="GameMain.h" />
+    <ClInclude Include="Goal.h" />
     <ClInclude Include="Ground.h" />
+    <ClInclude Include="HitBox.h" />
     <ClInclude Include="Keyboard.h" />
     <ClInclude Include="Math.h" />
-    <ClInclude Include="Player.h" />
+    <ClInclude Include="Node.h" />
+    <ClInclude Include="Physics2D.h" />
+    <ClInclude Include="PhysicsBehavior.h" />
+    <ClInclude Include="PlayerJump.h" />
+    <ClInclude Include="PlayerPunch.h" />
+    <ClInclude Include="Punch.h" />
+    <ClInclude Include="Rigidbody2D.h" />
     <ClInclude Include="SceneBase.h" />
     <ClInclude Include="SceneGame.h" />
     <ClInclude Include="SceneManager.h" />
     <ClInclude Include="Screen.h" />
+    <ClInclude Include="Stage.h" />
+    <ClInclude Include="Switch.h" />
+    <ClInclude Include="Tag.h" />
     <ClInclude Include="Time.h" />
+    <ClInclude Include="Transform2D.h" />
     <ClInclude Include="Vector2.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

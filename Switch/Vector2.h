@@ -93,4 +93,41 @@ public:
 	{
 		return Math::Equal0(x) && Math::Equal0(y);
 	}
+
+	// “àÏ
+	static constexpr float Dot(const Vector2& v1, const Vector2& v2)
+	{
+		return v1.x* v2.x + v1.y * v2.y;
+	}
+
+	// ŠOÏ
+	static constexpr float Cross(const Vector2& v1, const Vector2& v2)
+	{
+		return v1.x * v2.y - v1.y * v2.x;
+	}
+
+	// ’·‚³‚Ì2æ‚ğæ“¾
+	constexpr float SqrMagnitude() const
+	{
+		return Dot(*this, *this);
+	}
+
+	// ’·‚³‚ğæ“¾
+	float Magnitude() const
+	{
+		return std::sqrtf(SqrMagnitude());
+	}
+
+	// ³‹K‰»
+	Vector2 Normalized() const
+	{
+		float m = Magnitude();
+		assert(!Math::Equal0(m) && "0œZ");
+		return *this / m;
+	}
+	const Vector2& Normalize()
+	{
+		*this = Normalized();
+		return *this;
+	}
 };
