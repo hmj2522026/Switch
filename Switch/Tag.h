@@ -11,6 +11,8 @@ enum class Tag
 	Block,
 	BlockBreakable,
 	Goal,
+	Floor,
+	Button,
 
 
 	Length,

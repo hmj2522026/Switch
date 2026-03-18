@@ -11,3 +11,8 @@ void Keyboard::Update()
 
 	GetHitKeyStateAll(m_keyState);
 }
+
+bool Keyboard::isAnyPress()
+{
+	return std::memchr(m_keyState, 1, sizeof(char) * KeyStateNum) != nullptr;
+}

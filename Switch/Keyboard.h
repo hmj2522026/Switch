@@ -21,4 +21,6 @@ public:
 
 	// —£‚³‚ê‚½‚Æ‚«
 	static bool IsUp(int key) { return m_prevKeyState[key] && !m_keyState[key]; }
+
+	static bool isAnyPress();
 };

@@ -141,7 +141,11 @@
   <ItemGroup>
     <ClCompile Include="Actor2D.cpp" />
     <ClCompile Include="Block.cpp" />
+    <ClCompile Include="Button.cpp" />
     <ClCompile Include="Collision2D.cpp" />
+    <ClCompile Include="Floor.cpp" />
+    <ClCompile Include="FloorInitOff.cpp" />
+    <ClCompile Include="FloorInitOn.cpp" />
     <ClCompile Include="GameMain.cpp" />
     <ClCompile Include="Goal.cpp" />
     <ClCompile Include="Ground.cpp" />
@@ -154,6 +158,7 @@
     <ClCompile Include="Punch.cpp" />
     <ClCompile Include="SceneGame.cpp" />
     <ClCompile Include="SceneManager.cpp" />
+    <ClCompile Include="SceneTitle.cpp" />
     <ClCompile Include="Stage.cpp" />
     <ClCompile Include="Time.cpp" />
   </ItemGroup>
@@ -161,7 +166,11 @@
     <ClInclude Include="Actor2D.h" />
     <ClInclude Include="Block.h" />
     <ClInclude Include="BoxCollider.h" />
+    <ClInclude Include="Button.h" />
     <ClInclude Include="Collision2D.h" />
+    <ClInclude Include="Floor.h" />
+    <ClInclude Include="FloorInitOff.h" />
+    <ClInclude Include="FloorInitOn.h" />
     <ClInclude Include="GameConfig.h" />
     <ClInclude Include="GameMain.h" />
     <ClInclude Include="Goal.h" />
@@ -179,6 +188,7 @@
     <ClInclude Include="SceneBase.h" />
     <ClInclude Include="SceneGame.h" />
     <ClInclude Include="SceneManager.h" />
+    <ClInclude Include="SceneTitle.h" />
     <ClInclude Include="Screen.h" />
     <ClInclude Include="Stage.h" />
     <ClInclude Include="Switch.h" />

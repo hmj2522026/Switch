@@ -9,7 +9,7 @@ Punch::Punch(PlayerPunch* player) :
 	m_sprite(0),
 	m_isActive(false),
 	m_isFront(true),
-	m_ActiveTime(3.0f),
+	m_ActiveTime(ActiveTime),
 	m_flipx(false),
 	m_playerPunch(player)
 {
@@ -56,9 +56,10 @@ void Punch::Draw()
 void Punch::Active()
 {
 	m_isActive = true;
-	m_ActiveTime = 1.0f;
+	m_ActiveTime = ActiveTime;
 	m_collider = new BoxCollider(HitBoxSize);
 	m_collider->SetAllPhysicsBehavior(PhysicsBehavior::Ignore);
 	m_collider->SetPhysicsBehavior(Tag::BlockBreakable, PhysicsBehavior::Trigger);
+	m_collider->SetPhysicsBehavior(Tag::Button, PhysicsBehavior::Trigger);
 	Actor2D::Load();
 }

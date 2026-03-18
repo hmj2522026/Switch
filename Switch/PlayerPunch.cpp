@@ -33,14 +33,15 @@ void PlayerPunch::Release()
 void PlayerPunch::Update()
 {
 	Vector2 input;
+	m_rigidbody2D.velocity.x = 0;
 	if (Keyboard::IsPress(KEY_INPUT_LEFT))
 	{
-		input.x -= 5;
+		input.x = -MoveSpeed;
 		m_front = false;
 	}
 	if (Keyboard::IsPress(KEY_INPUT_RIGHT))
 	{
-		input.x += 5;
+		input.x = MoveSpeed;
 		m_front = true;
 	}
 	m_rigidbody2D.velocity.x = input.x;

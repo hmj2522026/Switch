@@ -27,6 +27,7 @@ void PlayerJump::Release()
 void PlayerJump::Update()
 {
 	Vector2 input;
+	m_rigidbody2D.velocity.x = 0;
 	if (Keyboard::IsDown(KEY_INPUT_W) && m_isJump)
 	{
 		m_rigidbody2D.AddForce(JumpForce);
@@ -34,11 +35,11 @@ void PlayerJump::Update()
 
 	if (Keyboard::IsPress(KEY_INPUT_A))
 	{
-		input.x = -5;
+		input.x = -MoveSpeed;
 	}
 	if (Keyboard::IsPress(KEY_INPUT_D))
 	{
-		input.x = 5;
+		input.x = MoveSpeed;
 	}
 	m_rigidbody2D.velocity.x = input.x;
 
@@ -56,7 +57,11 @@ void PlayerJump::OnCollision(const Actor2D* other)
 	{
 		m_isJump = true;
 	}
-	if (other->GetTag() == Tag::Block && other->GetPosition().y - 29 > m_transform.position.y)
+	if (other->GetTag() == Tag::Block && other->GetPosition().y - 29.9f > m_transform.position.y)
+	{
+		m_isJump = true;
+	}
+	if (other->GetTag() == Tag::Floor && other->GetPosition().y - 19.9f > m_transform.position.y)
 	{
 		m_isJump = true;
 	}
@@ -75,6 +80,10 @@ void PlayerJump::OnCollisionExit(const Actor2D* other)
 		m_isJump = false;
 	}
 	if (other->GetTag() == Tag::Block)
+	{
+		m_isJump = false;
+	}
+	if (other->GetTag() == Tag::Floor)
 	{
 		m_isJump = false;
 	}

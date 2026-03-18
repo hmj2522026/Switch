@@ -6,8 +6,9 @@ class PlayerPunch;
 class Punch : public Actor2D
 {
 private:
-	static constexpr Vector2 Offset = Vector2(30, 0);
+	static constexpr Vector2 Offset = Vector2(29, 0);
 	static constexpr Vector2 HitBoxSize = Vector2(30, 20);
+	static constexpr float ActiveTime = 0.5f;
 
 	int m_sprite;
 	bool m_isActive;

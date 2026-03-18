@@ -1,19 +1,18 @@
 #pragma once
 #include "Actor2D.h"
 
-class Goal : public Actor2D
+class Floor : public Actor2D
 {
-private:
-	static constexpr Vector2 HitBoxSize = Vector2(40, 60);
-
+protected:
 	int m_sprite;
 
 public:
-	Goal(Vector2 pos);
+	Floor(Vector2 pos);
 
 	virtual void Load();
 	virtual void Release();
 	void Draw();
 
 	virtual void OnCollisionEnter(const Actor2D* other);
+	virtual void OnCollisionExit(const Actor2D* other);
 };
