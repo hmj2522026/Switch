@@ -6,7 +6,7 @@ Button::Button(Vector2 pos) :
 	m_isPush(false),
 	m_sprite(0)
 {
-	m_collider = new BoxCollider(Vector2(30, 30));
+	m_collider = new BoxCollider(HitBoxSize);
 }
 
 void Button::Load()
@@ -18,7 +18,11 @@ void Button::Load()
 void Button::Release()
 {
 	Actor2D::Release();
-	DeleteGraph(m_sprite);
+
+	if (m_sprite)
+	{
+		DeleteGraph(m_sprite);
+	}
 }
 
 void Button::Draw()

@@ -25,7 +25,10 @@ void Punch::Load()
 void Punch::Release()
 {
 	Actor2D::Release();
-	DeleteGraph(m_sprite);
+	if (m_sprite)
+	{
+		DeleteGraph(m_sprite);
+	}
 }
 
 void Punch::Update()

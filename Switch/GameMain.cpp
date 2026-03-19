@@ -4,6 +4,7 @@
 #include "Screen.h"
 #include "SceneManager.h"
 #include "SceneGame.h"
+#include "SceneTitle.h"
 #include "Time.h"
 #include "Keyboard.h"
 #include "Physics2D.h"
@@ -32,7 +33,7 @@ void GameMain::Run()
 	}
 
 	// シーン起動
-	SceneManager::GetInstance()->Setup(new SceneGame());
+	SceneManager::GetInstance()->Setup(new SceneTitle());
 
 	// スクリーン作成
 	m_screen = MakeScreen(Screen::Width, Screen::Height);

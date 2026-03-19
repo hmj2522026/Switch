@@ -4,6 +4,9 @@
 class Floor : public Actor2D
 {
 protected:
+	static constexpr Vector2 HitBoxSize = Vector2(90, 5);
+	static constexpr Vector2 Offset = Vector2(0, -2.5);
+
 	int m_sprite;
 
 public:

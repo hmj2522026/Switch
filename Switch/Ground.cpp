@@ -18,7 +18,10 @@ void Ground::Load()
 void Ground::Release()
 {
 	Actor2D::Release();
-	DeleteGraph(m_sprite);
+	if (m_sprite)
+	{
+		DeleteGraph(m_sprite);
+	}
 }
 
 void Ground::Draw()

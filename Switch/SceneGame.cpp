@@ -1,4 +1,5 @@
 #include "SceneGame.h"
+#include "SceneTitle.h"
 #include "SceneManager.h"
 #include "Screen.h"
 #include "DxLib.h"
@@ -27,22 +28,19 @@ void SceneGame::Initialize()
 	m_rootNode = new Node();
 
 	m_ground = new Ground();
-	//m_ground->Load();
 	m_rootNode->AddChild(m_ground);
 
 	m_rootNode->AddChild(new HitBox(Vector2(30, Screen::Height), Screen::CenterLeft + Vector2(-15, 0)));
 	m_rootNode->AddChild(new HitBox(Vector2(30, Screen::Height), Screen::CenterRight + Vector2(15, 0)));
 	
-	m_rootNode->AddChild(new Stage());
-
 	m_playerJump = new PlayerJump();
-	//m_playerJump->Load();
 	m_rootNode->AddChild(m_playerJump);
 	
 	m_playerPunch = new PlayerPunch();
-	//m_playerPunch->Load();
 	m_rootNode->AddChild(m_playerPunch);
 	
+	m_rootNode->AddChild(new Stage());
+
 	m_switch = new Switch(m_playerJump, m_playerPunch);
 	
 }
@@ -60,19 +58,6 @@ void SceneGame::Finalize()
 	{
 		DeleteGraph(m_background);
 	}
-	//if (m_playerJump)
-	//{
-	//	m_playerJump->Release();
-	//	delete m_playerJump;
-	//	m_playerJump = nullptr;
-	//}
-	//if (m_playerPunch)
-	//{
-	//	m_playerPunch->Release();
-	//	delete m_playerPunch;
-	//	m_playerPunch = nullptr;
-	//}
-	//m_ground->Release();
 }
 
 void SceneGame::Update()
@@ -91,18 +76,16 @@ void SceneGame::Update()
 	{
 		SceneManager::GetInstance()->LoadScene(new SceneGame());
 	}
+	if (Keyboard::IsDown(KEY_INPUT_T))
+	{
+		SceneManager::GetInstance()->LoadScene(new SceneTitle());
+	}
 #endif // _DEBUG
-
-	//m_playerJump->Update();
-	//m_playerPunch->Update();
 }
 
 void SceneGame::Draw()
 {
 	DrawRotaGraph(static_cast<int>(Screen::Center.x), static_cast<int>(Screen::Center.y), 1.0f, 0.0f, m_background, true);
+	
 	m_rootNode->TreeDraw();
-
-	//m_playerJump->Draw();
-	//m_playerPunch->Draw();
-
 }

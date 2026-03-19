@@ -58,6 +58,6 @@ Stage::Stage() :
 	this->AddChild(new Floor(Screen::BottomLeft + Vector2(100, -55)));
 
 
-	this->AddChild(new Goal(Screen::TopCenter + Vector2(0, 110)));
 	this->AddChild(new Floor(Screen::TopCenter + Vector2(0, 145)));
+	this->AddChild(new Goal(Screen::TopCenter + Vector2(0, 110)));
 }

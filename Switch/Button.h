@@ -4,6 +4,8 @@
 class Button : public Actor2D
 {
 private:
+	static constexpr Vector2 HitBoxSize = Vector2(30, 30);
+
 	bool m_isPush;
 	int m_sprite;
 

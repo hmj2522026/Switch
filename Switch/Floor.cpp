@@ -5,7 +5,7 @@ Floor::Floor(Vector2 pos) :
 	Actor2D(pos,Tag::Floor),
 	m_sprite(0)
 {
-	m_collider = new BoxCollider(Vector2(90, 5),Vector2(0,-2.5));
+	m_collider = new BoxCollider(HitBoxSize,Offset);
 	m_collider->SetPhysicsBehavior(Tag::PlayerJump, PhysicsBehavior::Trigger);
 }
 
@@ -18,7 +18,10 @@ void Floor::Load()
 void Floor::Release()
 {
 	Actor2D::Release();
-	DeleteGraph(m_sprite);
+	if (m_sprite)
+	{
+		DeleteGraph(m_sprite);
+	}
 }
 
 void Floor::Draw()
