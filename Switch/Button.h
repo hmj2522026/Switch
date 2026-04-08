@@ -8,6 +8,7 @@ private:
 
 	bool m_isPush;
 	int m_sprite;
+	int m_sePush;
 
 public:
 	Button(Vector2 pos);

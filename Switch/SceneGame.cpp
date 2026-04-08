@@ -42,7 +42,7 @@ void SceneGame::Initialize()
 	m_rootNode->AddChild(new Stage());
 
 	m_switch = new Switch(m_playerJump, m_playerPunch);
-	
+	m_rootNode->AddChild(m_switch);
 }
 
 void SceneGame::Finalize()

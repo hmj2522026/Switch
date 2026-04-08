@@ -1,26 +1,23 @@
 #pragma once
 #include "Vector2.h"
-#include "PlayerJump.h"
-#include "PlayerPunch.h"
+#include "Node.h"
 
-class Switch
+class PlayerJump;
+class PlayerPunch;
+
+class Switch : public Node
 {
 private:
 	PlayerJump* m_playerJump;
 	PlayerPunch* m_playerPunch;
 
+	int m_se;
+
 public:
-	Switch(PlayerJump* player,PlayerPunch* playerPunch) :
-		m_playerJump(player),
-		m_playerPunch(playerPunch)
-	{ }
+	Switch(PlayerJump* player, PlayerPunch* playerPunch);
 
-	void SwitchPlayerPos()
-	{
-		Vector2 pos = m_playerJump->GetPosition();
-		m_playerJump->SetPosition(m_playerPunch->GetPosition());
-		m_playerPunch->SetPosition(pos);
+	virtual void Load();
+	virtual void Release();
 
-		// ‰¹
-	}
+	void SwitchPlayerPos();
 };
